@@ -1,0 +1,11 @@
+pull_request_rules:
+  - name: backport patches to minor version branch
+    conditions:
+      - base=main
+      - label=backport
+    actions:
+      backport:
+        branches:
+          - "1.2"
+        assignees:
+          - "{{ author }}"
